@@ -1,5 +1,9 @@
 name: Update README web pages
 
+# Grant write permission to contents so the GITHUB_TOKEN can push commits
+permissions:
+  contents: write
+
 on:
   push:
     branches: [ main ]
