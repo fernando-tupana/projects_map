@@ -31,6 +31,26 @@ jobs:
       - name: Build site
         run: mkdocs build --strict
 
+      - name: Copy static site folders into site/
+        run: |
+          set -euo pipefail
+          echo "Copying static folders with index.html into site/"
+          # iterate top-level directories
+          for d in ./*/; do
+            [ -d "$d" ] || continue
+            dn=$(basename "$d")
+            case "$dn" in
+              .git|node_modules|.github|.vscode|dist|scripts|docs) continue ;;
+            esac
+            if [ -f "$d/index.html" ] || [ -f "$d/index.htm" ]; then
+              echo "- copying $dn to site/$dn"
+              mkdir -p "site/$dn"
+              rsync -a "$d" "site/$dn/"
+            else
+              echo "- skipping $dn (no index.html)"
+            fi
+          done
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
