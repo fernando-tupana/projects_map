@@ -28,6 +28,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs-material
 
+      - name: Use README.md as MkDocs index
+        run: |
+          echo "Copying README.md to docs/index.md so MkDocs uses README as the homepage"
+          mkdir -p docs
+          cp README.md docs/index.md
+
       - name: Build site
         run: mkdocs build --strict
 
