@@ -17,7 +17,7 @@ printf "%s\n\n" "" >> "$TMPFILE"
 for f in *; do
   if [ -d "$f" ]; then
     case "$f" in
-      .git|node_modules|.github|.vscode|dist|scripts) continue ;;
+      .git|node_modules|.github|.vscode|dist|scripts|docs) continue ;;
     esac
   # Use echo -- to avoid issues if the line starts with '-'
   printf '%s\n' "- [$f](${BASE_URL%/}/$f)" >> "$TMPFILE"
