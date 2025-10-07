@@ -19,14 +19,17 @@ for f in *; do
     case "$f" in
       .git|node_modules|.github|.vscode|dist) continue ;;
     esac
-  printf '%s\n' "- [$f](${BASE_URL%/}/$f)" >> "$TMPFILE"
+  # Use echo -- to avoid issues if the line starts with '-'
+  echo -- "- [$f](${BASE_URL%/}/$f)" >> "$TMPFILE"
   fi
 done
 
 printf "%s\n" "" >> "$TMPFILE"
 printf "%s\n" "If the base deployment URL differs for any site, update the links above accordingly." >> "$TMPFILE"
 printf "%s\n\n" "" >> "$TMPFILE"
-printf "---\n\nGenerated: updated README with links to each top-level folder's web page by GitHub Action.\n" >> "$TMPFILE"
+printf '%s\n' '---' >> "$TMPFILE"
+printf '%s\n' 'Generated: updated README with links to each top-level folder'
+printf '%s\n' 'web page by GitHub Action.' >> "$TMPFILE"
 
 if [ -f README.md ] && cmp -s "$TMPFILE" README.md; then
   echo "README.md already up to date"
