@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE_URL="${BASE_URL:-https://imaginative-crumble-5c5a0b.netlify.app}"
+BASE_URL="${BASE_URL:-https://fernando-tupana.github.io/projects_map}"
 
 REPO_ROOT=$(git rev-parse --show-toplevel)
 cd "$REPO_ROOT"
