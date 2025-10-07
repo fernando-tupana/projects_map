@@ -7,7 +7,7 @@ REPO_ROOT=$(git rev-parse --show-toplevel)
 cd "$REPO_ROOT"
 
 TMPFILE=$(mktemp)
-printf "%s\n" "# projects_map" >> "$TMPFILE"
+printf "%s\n" "# Project Maps" >> "$TMPFILE"
 printf "%s\n\n" "" >> "$TMPFILE"
 printf "%s\n" "This repository contains several static site folders. Below are convenient links to the deployed web pages (Netlify) for each top-level folder." >> "$TMPFILE"
 printf "%s\n\n" "" >> "$TMPFILE"
