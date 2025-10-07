@@ -27,6 +27,6 @@ jobs:
 
       - name: Run update script
         env:
-          BASE_URL: https://imaginative-crumble-5c5a0b.netlify.app
+          BASE_URL: https://fernando-tupana.github.io/projects_map
         run: |
           ./scripts/update_readme.sh
