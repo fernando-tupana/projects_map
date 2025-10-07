@@ -51,28 +51,9 @@ jobs:
             fi
           done
 
-      - name: Debug: list site/ and show index files
-        run: |
-          echo '=== site/ tree ==='
-          ls -la site || true
-          echo '=== head of site/index.html (if exists) ==='
-          if [ -f site/index.html ]; then
-            sed -n '1,120p' site/index.html || true
-          else
-            echo '(no site/index.html)'
-          fi
-          echo '=== head of site/<folders>/index.html (examples) ==='
-          for f in site/*; do
-            if [ -d "$f" ] && [ -f "$f/index.html" ]; then
-              echo "--- $f/index.html ---"
-              sed -n '1,40p' "$f/index.html" || true
-            fi
-          done
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
           publish_branch: gh-pages
-          clean: true
