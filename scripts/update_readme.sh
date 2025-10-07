@@ -19,7 +19,7 @@ for f in *; do
     case "$f" in
       .git|node_modules|.github|.vscode|dist) continue ;;
     esac
-    printf "- **%s**: %s/%s\n" "$f" "${BASE_URL%/}" "$f" >> "$TMPFILE"
+  printf '%s\n' "- [$f](${BASE_URL%/}/$f)" >> "$TMPFILE"
   fi
 done
 
