@@ -1,4 +1,4 @@
-# Projects Maps
+# projects_map
 
 
 This repository contains several static site folders. Below are convenient links to the deployed web pages (Netlify) for each top-level folder.
