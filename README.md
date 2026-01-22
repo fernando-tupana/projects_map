@@ -10,6 +10,7 @@ This repository contains several static site folders. Below are convenient links
 - [CDR_projects](https://fernando-tupana.github.io/projects_map/CDR_projects)
 - [CDR_suppliers](https://fernando-tupana.github.io/projects_map/CDR_suppliers)
 - [FIRMS_Hotspot](https://fernando-tupana.github.io/projects_map/FIRMS_Hotspot)
+- [Parque_Federacion](https://fernando-tupana.github.io/projects_map/Parque_Federacion)
 - [comunidades_indigenas](https://fernando-tupana.github.io/projects_map/comunidades_indigenas)
 - [ensayo_popelka](https://fernando-tupana.github.io/projects_map/ensayo_popelka)
 
